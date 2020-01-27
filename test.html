@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Image mystère</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+<script type="text/javascript">
+function getCookie(sName) {
+        var cookContent = document.cookie, cookEnd, i, j;
+        var sName = sName + "=";
+  
+        for (i=0, c=cookContent.length; i<c; i++) {
+                j = i + sName.length;
+                if (cookContent.substring(i, j) == sName) {
+                        cookEnd = cookContent.indexOf(";", j);
+                        if (cookEnd == -1) {
+                                cookEnd = cookContent.length;
+                        }
+                        return decodeURIComponent(cookContent.substring(j, cookEnd));
+                }
+        }      
+        return null;
+}
+ 
+function image_mystere(){
+    var X = Math.random()*(document.body.clientWidth-200);
+    var XX = Math.random()*(document.body.clientHeight-180);
+    if (document.getElementById){
+        if(getCookie('cookielire1fois') == "true"){}
+        else{
+            document.cookie = 'cookielire1fois=true; expires=Sun, 28 Feb 2013 00:00:00 UTC; path=/';
+            document.getElementById('image_aleatoire').style.display = "inline";
+            document.getElementById('image_aleatoire').style.left = X + 'px';
+            document.getElementById('image_aleatoire').style.top = XX + 'px';
+        }
+    }
+    else if (document.all){
+        if(getCookie('cookielire1fois') == "true"){}
+        else{
+            document.cookie = 'cookielire1fois=true; expires=Sun, 28 Feb 2013 00:00:00 UTC; path=/';
+            document.getElementById['image_aleatoire'].style.display = "inline";
+            document.all['image_aleatoire'].style.left = X + 'px';
+            document.all['image_aleatoire'].style.top = XX + 'px';
+        }
+    }
+    else{
+        alert('Votre navigateur est trop vieux pour éxécuter ce javascript');
+        return false;
+    }
+}
+</script>
+ 
+<style TYPE="text/css">
+#image_aleatoire {
+position:absolute;
+top:0;
+left:0;
+z-index:1;
+width:210px;
+height:150px;
+display:none;
+background-image:(logo-orange.png) no-repeat;
+}
+</style>
+ 
+</head>
+ 
+<body onload="image_mystere()">
+ 
+<div id="image_aleatoire"></div>
+ 
+</body>
+</html>

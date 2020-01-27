@@ -1,0 +1,16 @@
+img 
+{
+    width: 200px;
+    height: 200px;
+}
+
+
+
+.myDiv {
+    width: 150px;
+    height: 53px;
+    position: relative;
+    margin: 100px auto 0;
+    background-image: image-set(logo-orange.png);
+    background-repeat: no-repeat;
+}
